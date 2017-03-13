@@ -1,5 +1,7 @@
 # Rails blogger
 
+From [this tutorial](http://tutorials.jumpstartlab.com/projects/blogger.html)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
