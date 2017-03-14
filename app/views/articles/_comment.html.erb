@@ -1,8 +1,13 @@
-<div>
-  <h4>Comment by <%= comment.author_name %></h4>
-  <p>
-    Posted <%= distance_of_time_in_words(comment.article.created_at,
-                                         comment.created_at) %> later.
-  </p>
-  <p class="comment"><%= comment.body %></p>
+<div class="panel panel-default comment-container">
+  <div class="panel-heading">
+    Comment by <%= comment.author_name %>
+    <span class="label label-default comment-label">
+      Posted <%= distance_of_time_in_words(comment.article.created_at,
+                                           comment.created_at) %> later.
+    </span>
+  </div>
+
+  <div class="panel-body">
+    <p class="comment"><%= comment.body %></p>
+  </div>
 </div>

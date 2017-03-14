@@ -1,14 +1,41 @@
 <div class="page-header">
-  <h1><%= @article.title %></h1>
-</div>
-<p><%= @article.body %></p>
+  <h1>
+    <%= @article.title %>
 
-<h3>Comments (<%= @article.comments.size %>)</h3>
-<!-- Renders the "comment" partial once for each element in the collection @article.comments  -->
-<%= render partial: 'articles/comment', collection: @article.comments %>
+<!-- Article control buttons -->
+
+    <div class="article_buttons">
+      <div class="btn-group btn-group-sm" role="group">
+        <%= link_to "delete", article_path(@article), method: :delete,
+                              data: {confirm: "Really delete the article?"},
+                              class: "btn btn-default" %>
+        <%= link_to "edit", edit_article_path(@article), class: "btn btn-default" %>
+      </div>
+      <%= link_to "Back to articles list", articles_path, class: "btn btn-default btn-sm" %>
+    </div>
+
+  </h1>
+</div>
+
+<!-- Article -->
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= @article.body %>
+  </div>
+</div>
+
+<hr />
+
+<!-- Comments -->
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Comments (<%= @article.comments.size %>)</h3>
+  </div>
+
+  <!-- Renders the "comment" partial once for each element in the collection @article.comments  -->
+  <%= render partial: 'articles/comment', collection: @article.comments %>
+</div>
+
 <%= render partial: 'comments/form' %>
-<%= link_to "<< Back to articles list", articles_path, class: "btn btn-primary" %>
-<%= link_to "delete", article_path(@article), method: :delete,
-                      data: {confirm: "Really delete the article?"},
-                      class: "btn btn-primary" %>
-<%= link_to "edit", edit_article_path(@article), class: "btn btn-primary" %>

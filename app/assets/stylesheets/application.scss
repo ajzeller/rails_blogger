@@ -5,5 +5,31 @@
 // forms
 .form-control {
   margin: auto;
-  width: 50%;
+  width: 100%;
+}
+
+// buttons
+
+.new_article {
+  float: right;
+}
+
+.article_buttons {
+  float: right;
+}
+
+// containers
+
+#main-container {
+  max-width: 50%;
+}
+
+.comment-container {
+  margin: 1em;
+}
+
+// labels
+
+.comment-label {
+  float: right;
 }

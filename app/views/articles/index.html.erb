@@ -1,11 +1,18 @@
-<h1>All articles</h1>
+<div class="page-header">
+  <h1>
+    All articles
+    <%= link_to "Create new article", new_article_path, class: "btn btn-default new_article" %>
+</h1>
+  <div class="">
 
-<ul id="articles">
+  </div>
+
+</div>
+
+<div class="list-group" id="articles">
   <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article), class: 'article_title' %>
-    </li>
-  <% end %>
-</ul>
 
-<%= link_to "Create new article", new_article_path, class: "new_article" %>
+      <%= link_to article.title, article_path(article), class: 'list-group-item' %>
+    
+  <% end %>
+</div>
