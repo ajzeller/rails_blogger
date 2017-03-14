@@ -1,6 +1,14 @@
-<h1><%= @article.title %></h1>
+<div class="page-header">
+  <h1><%= @article.title %></h1>
+</div>
 <p><%= @article.body %></p>
-<%= link_to "<< Back to articles list", articles_path %>
+
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<!-- Renders the "comment" partial once for each element in the collection @article.comments  -->
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= render partial: 'comments/form' %>
+<%= link_to "<< Back to articles list", articles_path, class: "btn btn-primary" %>
 <%= link_to "delete", article_path(@article), method: :delete,
-                      data: {confirm: "Really delete the article?"} %>
-<%= link_to "edit", edit_article_path(@article) %>
+                      data: {confirm: "Really delete the article?"},
+                      class: "btn btn-primary" %>
+<%= link_to "edit", edit_article_path(@article), class: "btn btn-primary" %>
