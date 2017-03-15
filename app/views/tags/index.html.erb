@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Tags</h1>
+</div>
+
+<div class="list-group" id="tags">
+  <% @tags.each do |tag| %>
+    <div class="list-group-item">
+      <%= link_to tag.name, tag_path(tag), class: "label label-default" %>
+        <%= link_to tag_path(tag), method: :delete,
+                              data: {confirm: "Really delete the tag?"} do %>
+          <span class="glyphicon glyphicon-trash delete-tag-icon"></span>
+        <% end %>
+    </div>
+
+  <% end %>
+</div>

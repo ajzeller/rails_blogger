@@ -17,6 +17,14 @@
   </h1>
 </div>
 
+<div class="tags">
+  <p>
+    <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag), class: "label label-default" %>
+    <% end %>
+  </p>
+</div>
+
 <!-- Article -->
 
 <div class="panel panel-default">

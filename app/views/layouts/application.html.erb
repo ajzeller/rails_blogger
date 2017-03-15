@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <p class="flash"><%= flash.notice %></p>
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
     <div id="main-container" class="container">
       <%= render partial: 'layouts/header' %>
       <%= yield %>
