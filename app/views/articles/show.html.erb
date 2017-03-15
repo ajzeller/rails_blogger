@@ -29,7 +29,14 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <%= @article.body %>
+    <p>
+      <% if @article.image.exists? %>
+        <%= image_tag @article.image.url(:medium) %>
+      <% end %>
+    </p>
+    <p>
+      <%= @article.body %>      
+    </p>
   </div>
 </div>
 
