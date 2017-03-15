@@ -16,6 +16,12 @@
 
 .article_buttons {
   float: right;
+  margin-bottom: 1em;
+}
+
+.logout {
+  display: inline-block;
+  float: right;
 }
 
 // containers
@@ -30,6 +36,21 @@
 
 .tags {
   float: none;
+}
+
+.logged-in-status {
+  float: right;
+  margin-bottom: 2em;
+}
+
+.login-form {
+  display: inline-block;
+  margin: auto;
+  width: 50%;
+}
+
+#article_button_container {
+  padding: 0;
 }
 
 // labels

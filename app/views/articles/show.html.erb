@@ -1,28 +1,33 @@
 <div class="page-header">
   <h1>
     <%= @article.title %>
+  </h1>
+</div>
 
 <!-- Article control buttons -->
-
-    <div class="article_buttons">
+<div class="container-fluid" id="article_button_container">
+  <div class="article_buttons">
+    <% if logged_in? %>
       <div class="btn-group btn-group-sm" role="group">
         <%= link_to "delete", article_path(@article), method: :delete,
                               data: {confirm: "Really delete the article?"},
                               class: "btn btn-default" %>
         <%= link_to "edit", edit_article_path(@article), class: "btn btn-default" %>
       </div>
-      <%= link_to "Back to articles list", articles_path, class: "btn btn-default btn-sm" %>
-    </div>
+    <% end %>
+    <%= link_to "Back to articles list", articles_path, class: "btn btn-default btn-sm" %>
+  </div>
 
-  </h1>
-</div>
 
-<div class="tags">
+
+  <div class="tags">
   <p>
     <% @article.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag), class: "label label-default" %>
     <% end %>
   </p>
+  </div>
+
 </div>
 
 <!-- Article -->
@@ -35,7 +40,7 @@
       <% end %>
     </p>
     <p>
-      <%= @article.body %>      
+      <%= @article.body %>
     </p>
   </div>
 </div>

@@ -6,10 +6,12 @@
   <% @tags.each do |tag| %>
     <div class="list-group-item">
       <%= link_to tag.name, tag_path(tag), class: "label label-default" %>
+      <% if logged_in? %>
         <%= link_to tag_path(tag), method: :delete,
                               data: {confirm: "Really delete the tag?"} do %>
           <span class="glyphicon glyphicon-trash delete-tag-icon"></span>
         <% end %>
+      <% end %>
     </div>
 
   <% end %>

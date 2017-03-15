@@ -15,6 +15,19 @@
     <div id="main-container" class="container">
       <%= render partial: 'layouts/header' %>
       <%= yield %>
+      <hr />
+      <div class="logged-in-status">
+        <div class="btn-group btn-group-xs" role="group">
+            <% if logged_in? %>
+              <!-- <h6><%= "Logged in as #{current_user.email} |" %></h6> -->
+              <%= link_to "Logout", logout_path, class: "btn btn-default btn-xs" %>
+            <% else %>
+              <%= link_to "Login", login_path, role: 'button', class: "btn btn-default" %>
+              <%= link_to "Sign Up", new_author_path, role: 'button', class: "btn btn-default" %>
+            <% end %>
+        </div>
+
+      </div>
     </div>
   </body>
 </html>

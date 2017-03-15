@@ -1,0 +1,39 @@
+<%= form_for(author, html: { class: 'form-horizontal login-form' } ) do |f| %>
+  <% if author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+      <% author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p>
+  <%= f.label :username %>
+  <%= f.text_field :username, class: 'form-control' %>
+</p>
+
+<p>
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control' %>
+</p>
+
+<p>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+</p>
+
+<p>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+</p>
+
+
+<div class="actions">
+  <%= f.submit "Sign Up", class: 'btn btn-default'%>
+</div>
+
+<% end %>
