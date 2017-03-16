@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 20170315051829) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "article_id"
@@ -51,10 +57,5 @@ ActiveRecord::Schema.define(version: 20170315051829) do
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end

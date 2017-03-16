@@ -35,11 +35,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # image upload
-gem "paperclip"
-gem 'aws-sdk', '~> 2.3'
+gem 'paperclip'
+gem 'aws-sdk'
 
 #authentification
 gem 'sorcery'
+
+# ENV variable management
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
