@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 # image upload
 gem "paperclip"
+gem 'aws-sdk', '~> 2.3'
 
 #authentification
 gem 'sorcery'
